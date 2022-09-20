@@ -3,10 +3,15 @@ import mysql from 'mysql2/promise';
 
 dotenv.config();
 
+// const connection = mysql.createPool({
+//   host: 'db',
+//   user: 'root',
+//   password: 'password',
+// });
 const connection = mysql.createPool({
-  host: 'db',
-  user: 'root',
-  password: 'password',
+  host: process.env.MYSQL_HOST,
+  user: process.env.MYSQL_USER,
+  password: process.env.MYSQL_PASSWORD,
 });
 
 export default connection;

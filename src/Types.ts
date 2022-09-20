@@ -14,8 +14,9 @@ export interface UsersType {
   level: number,
   password: string
 }
-//   "username": "MAX",
-//   "classe": "swordsman",
-//   "level": 10,
-//   "password": "SavingPeople"
-// }
+
+export interface OrderType {
+  id: number,
+  userId: number
+  productsIds: Array<number>
+}

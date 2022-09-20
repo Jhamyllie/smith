@@ -1,6 +1,6 @@
-import { ResultSetHeader } from 'mysql2';
+import { ResultSetHeader, RowDataPacket } from 'mysql2';
 import connection from './connection';
-import { ProductsType } from '../Types';
+import { GetProducts, ProductsType } from '../Types';
 
 const TABLE = 'Trybesmith.Products';
 
@@ -10,4 +10,8 @@ async function products(name: string, amount: string):Promise<ProductsType> {
   return { id: insertId, name, amount };
 }
 
-export default { products };
+async function getProducts(): Promise<GetProducts[]> {
+  const [product] = await connection.execute<RowDataPacket[]>(`SELECT * FROM ${TABLE}`);
+  return product as GetProducts[];
+}
+export default { products, getProducts };

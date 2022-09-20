@@ -5,4 +5,9 @@ async function products(name: string, amount: string) {
   return product;
 }
 
-export default { products };
+async function getProducts() {
+  const product = await productsModels.getProducts();
+  return product;
+}
+
+export default { products, getProducts };

@@ -3,3 +3,7 @@ export interface ProductsType {
   name: string,
   amount: string
 }
+
+export interface GetProducts extends ProductsType{
+  orderId: null | number
+}

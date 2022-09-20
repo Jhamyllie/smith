@@ -7,3 +7,15 @@ export interface ProductsType {
 export interface GetProducts extends ProductsType{
   orderId: null | number
 }
+
+export interface UsersType {
+  username: string,
+  classe: string,
+  level: number,
+  password: string
+}
+//   "username": "MAX",
+//   "classe": "swordsman",
+//   "level": 10,
+//   "password": "SavingPeople"
+// }
